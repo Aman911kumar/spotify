@@ -1,0 +1,738 @@
+:root {
+    --boxbgcolor: #161515;
+    --black: black;
+    --white: white;
+    --boxBorderRadius: 10px;
+    --cardHover: #323232;
+    --invt1: 0.5;
+    --invt2: 0.7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    color: var(--white);
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+body {
+    /* text-align: center; */
+    min-width: 333px;
+    padding: 7px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    transition: all 0.5s;
+}
+
+/* darkmode toggel button */
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 70px;
+    height: 30px;
+    background: rgb(0, 0, 0);
+    display: block;
+    border-radius: 50px;
+    position: relative;
+    transition: all 0.8s ease;
+}
+
+label:after {
+
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 30px;
+    transition: all 0.8s ease;
+}
+
+input:checked+label {
+    background-color: #ffffff;
+}
+
+input:checked+label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+    background-color: rgb(0, 0, 0);
+}
+
+label:active:after {
+    width: 35px;
+}
+
+.theme {
+    padding: 0;
+    top: 0;
+    right: 120px;
+    position: absolute;
+    margin-bottom: 15px;
+}
+
+/* darkmode toggel button */
+
+
+.leftBox {
+    width: 300px;
+    height: 98vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--black);
+    justify-content: space-between;
+    border-radius: var(--boxBorderRadius);
+}
+
+.rightBox {
+    width: 80%;
+    height: 98vh;
+    min-height: 700px;
+    position: relative;
+    transition: all 0.3s;
+    background-color: var(--boxbgcolor);
+    border-radius: var(--boxBorderRadius);
+}
+
+.main {
+    display: none;
+}
+
+.upperBox {
+    padding: 5%;
+    width: 97%;
+    height: 29%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: var(--boxBorderRadius);
+    background-color: var(--boxbgcolor);
+    transition: all 0.3s;
+}
+
+
+.home,
+.search {
+    gap: 5%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.home>p,
+.search>p,
+.library>p {
+    width: 70%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    width: 30%;
+    filter: invert(1);
+}
+
+.home-svg {
+    width: 8%;
+    filter: invert(1);
+}
+
+.search-svg {
+    width: 8%;
+    filter: invert(var(--invt2));
+    transition: all 0.3s;
+}
+
+.search>p {
+    filter: invert(var(--invt1));
+    transition: all 0.3s;
+}
+
+.search:hover {
+    --invt1: 0;
+    --invt2: 1;
+}
+
+.cross {
+    width: 10%;
+    filter: invert(1);
+    transform: rotate(45deg);
+    display: none;
+}
+
+.plus-svg {
+    filter: invert(0.7);
+    width: 40px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.5s, filter 0.5s;
+    cursor: pointer;
+}
+
+.plus-svg:hover {
+    filter: invert(1);
+    background-color: rgb(196, 196, 196);
+}
+
+.library {
+    gap: 5%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.library-svg {
+    width: 10%;
+    filter: invert(1);
+}
+
+.lowerBox {
+    gap: 20px;
+    width: 97%;
+    height: 70%;
+    padding: 20px;
+    display: flex;
+    transition: all 0.3s;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--boxbgcolor);
+    border-radius: var(--boxBorderRadius);
+}
+
+.playList {
+    gap: 5px;
+    height: 70%;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    background-color: var(--black);
+    border-radius: var(--boxBorderRadius);
+}
+
+.music {
+    padding: 5px;
+    width: 236px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(32, 32, 32);
+    /* background-image: url(https://th.bing.com/th/id/R.aa727d987202df6f8187a3e584af074e?rik=1dHHybEwXrVsFA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fsJ0IAL4.jpg&ehk=EB%2fjZ0b0ihPbNgQj2ceLP1zGDZNguxVnL1XWjtylskU%3d&risl=&pid=ImgRaw&r=0); 
+    /* background-position:center; */
+    /* background-size: cover; */
+    border-radius: var(--boxBorderRadius);
+    transition: all 0.3s;
+}
+
+.music:hover {
+    background-color: rgb(64, 64, 64);
+}
+
+.music-logo {
+    width: 10%;
+    margin: 10px;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.library-heading {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.music-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+}
+
+.play-logo {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.library-play-pause {
+    width: 10%;
+    margin: 10px;
+    position: relative;
+}
+
+.pause-logo {
+    top: 0;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.playList::-webkit-scrollbar {
+    display: none;
+}
+
+.glob {
+    width: 20px;
+}
+
+.language {
+    gap: 5px;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.715);
+}
+
+footer {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer>a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    height: 10%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #101010;
+    justify-content: space-between;
+    border-radius: 7px 7px 0 0;
+    transition: all 0.3s;
+}
+
+.prev-nxt {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.prev {
+    width: 40px;
+    padding: 5px;
+    filter: invert(0.7);
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+
+.prev:hover {
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.nxt {
+    width: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    filter: invert(0.7);
+}
+
+.nxt:hover {
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.Log-in {
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    transition: transform 0.3s;
+    background-color: white;
+}
+
+.Log-in:hover {
+    color: black;
+    font-weight: 700;
+    transform: scale(1.1);
+}
+
+.Sign-up {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: var(--black);
+    color: rgba(255, 255, 255, 0.486);
+    transition: all 0.3s;
+}
+
+.Sign-up:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.containt {
+    height: 66%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+.containt-heading {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.cards {
+    width: 200px;
+    height: 280px;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+:root {
+    --bottom: 35%;
+    --opacity: 0;
+}
+
+.cards:hover {
+    --bottom: 40%;
+    --opacity: 1;
+    background-color: var(--cardHover);
+}
+
+.card-play-pause {
+    padding: 15px;
+    position: absolute;
+    width: 55px;
+    background-color: rgb(0, 226, 0);
+    bottom: var(--bottom);
+    border-radius: 50%;
+    right: 20px;
+    height: 55px;
+    opacity: var(--opacity);
+    transition: all 0.2s linear;
+}
+
+.card-play {
+    position: absolute;
+    margin-left: 2px;
+}
+
+.card-pause {
+    opacity: 0;
+}
+
+.folder,
+.description {
+    padding: 3px 5px;
+}
+
+.description {
+    opacity: 0.6;
+    color: var(--white)
+}
+
+.card-img {
+    margin: 5px;
+    border-radius: 5px;
+    width: 180px;
+    height: 63%;
+    object-fit: cover;
+    object-position: top;
+    filter: invert(0);
+}
+
+.containt::-webkit-scrollbar {
+    display: none;
+}
+
+.seekbar-section {
+    padding: 5px;
+    margin: 1% 1% auto 1%;
+    width: 98%;
+    height: 100px;
+    bottom: 0;
+    position: sticky;
+    background-color: rgba(0, 82, 137, 0.991);
+    border-radius: var(--boxBorderRadius);
+}
+
+.seekbar-img {
+    gap: 10px;
+    width: 33%;
+    display: flex;
+    align-items: center;
+}
+
+.volume {
+    gap: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.volume-img {
+    position: relative;
+}
+
+.unmute {
+    position: absolute;
+}
+
+.mute {
+    opacity: 0;
+}
+
+.unmute,
+.mute {
+    transition: all 0.2s ease-in-out;
+}
+
+.duration {
+    font-size: small;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.previous,
+.next {
+    width: 30px;
+    cursor: pointer;
+}
+
+.play {
+    width: 25px;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+    position: absolute;
+}
+
+.pause {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.play-pause {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.seekbar-info {
+    margin: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.seekbar-song-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 33%;
+}
+
+.seek-bar {
+    margin-bottom: 1%;
+    width: 99%;
+    height: 5px;
+    bottom: 2px;
+    padding: 2px;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.5s linear;
+}
+
+.seek-ball {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    bottom: -1.5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: white;
+}
+
+.volume-level {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 850px) {
+
+    .prev-nxt {
+        display: none;
+    }
+
+    .Log-in {
+        margin: 0px;
+        cursor: auto;
+        padding: 5px 15px;
+    }
+
+    nav {
+        position: sticky;
+        height: auto;
+        background-color: var(--black);
+    }
+
+    .m-logo {
+        width: 100px;
+    }
+
+    .cross,
+    .main {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .seek-bar {
+        margin-bottom: 1%;
+        width: 97%;
+    }
+
+    .home,
+    .search,
+    .language,
+    .plus-svg,
+    .library,
+    .music-logo,
+    .play-logo,
+    .previous,
+    .next,
+    .cards,
+    .volume,
+    .play-pause,
+    .Sign-up,
+    .music,
+    .volume-level,
+    .seek-bar {
+        cursor: auto;
+    }
+
+    .rightBox {
+        width: 100vw;
+    }
+
+    .cards {
+        width: 160px;
+        height: 230px;
+        justify-content: center;
+    }
+
+    .card-img {
+        border-radius: 5px;
+        width: 130px;
+    }
+
+    .folder,
+    .description {
+        padding: 0;
+    }
+
+    .volume-level {
+        width: 70%;
+    }
+
+    .volume {
+        width: 30%;
+    }
+
+    .play-pause {
+        position: relative;
+        width: 20px;
+    }
+
+    .containt {
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .music {
+        flex-grow: (1);
+    }
+
+    .leftBox {
+        z-index: 1;
+        overflow: hidden;
+        left: -1000px;
+        position: absolute;
+        transition: left 0.2s ease-in-out;
+    }
+
+}
+
+@media only screen and (max-width: 344px) {
+    .cards {
+        width: 150px;
+        height: 220px;
+        justify-content: center;
+    }
+
+    .card-img {
+        border-radius: 5px;
+        width: 120px;
+    }
+
+    .containt {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

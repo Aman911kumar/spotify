@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="leftBox">
+        <div class="upperBox">
+        <div class="theme">
+            <input class="theme-color" type="checkbox" id="switch" /><label for="switch">Toggle</label>
+        </div>
+            <div class="logo-box">
+                <img class="logo" src="images/spotify_logo.svg" alt="">
+                <img onclick="hamburgur()" class="cross" src="images/plus.svg" alt="">
+            </div>
+            <div class="home">
+                <img class="home-svg" src="images/Home.svg" alt="">
+                <p>Home</p>
+            </div>
+            <div class="search">
+                <img class="search-svg" src="images/search.svg" alt="">
+                <p>Search</p>
+            </div>
+        </div>
+        <div class="lowerBox">
+            <div class="library">
+                <img class="library-svg" src="images/library.svg" alt="">
+                <p class="library-heading">Your Library</p>
+                <img class="plus-svg" src="images/plus.svg" alt="">
+            </div>
+            <div class="playList">
+
+
+
+                <!-- <div class="music">
+                    <img class="music-logo" src="images/music-notes-svgrepo-com.svg" alt="">
+                    <p class="music-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                        provident
+                        atque iusto?</p>
+                    <div class="library-play-pause">
+                        <img class="play-logo" src="images/play-svgrepo-com.svg" alt="">
+                        <img class="pause-logo" src="images/pause-svgrepo-com.svg" alt="">
+                    </div>
+                </div> -->
+
+
+
+
+            </div>
+            <footer>
+                <a href="">Legal</a>
+                <a href="">Safety & Privacy Center</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Cookies</a>
+                <a href="">About adds</a>
+                <a href="">Accessibility</a>
+            </footer>
+            <button class="language"> <img class="glob invert" src="images/glob.svg" alt=""> English</button>
+        </div>
+    </div>
+    <div class="rightBox">
+        <nav>
+            <div class="main">
+                <img onclick="hamburgur()" class="hamburgur" src="images/hamburgur.svg" alt="">
+                <img class="m-logo invert" src="images/spotify_logo.svg" alt="">
+            </div>
+            <div class="prev-nxt">
+                <img class="prev" src="images/next_arrow.svg" alt="">
+                <img class="nxt " src="images/next_arrow.svg" alt="">
+            </div>
+            <div class="user-regester">
+                <button class="Sign-up">Sign up</button>
+                <button class="Log-in">Log in</button>
+            </div>
+        </nav>
+
+        <h2 class="containt-heading">Popular albums</h2>
+
+        <div class="containt">
+
+            <!-- <div url=${folderList[i]} class="cards">
+                <img class="card-img" src="${folderList[i]}/cover.jpg" alt="">
+                <img class="card-play" src="images/card play.svg" alt="">
+                <h4 class="folder">${folder_info.title}</h4>
+                <p class="description">${folder_info.description}</p>
+            </div> -->
+
+            <!-- <div url = "" class="cards">
+                <img class="card-img" src="songs/Animal/cover.jpg" alt="">
+                <div class="card-play-pause">
+                    <img class="card-play" src="images/card play.svg" alt="">
+                    <img class="card-pause" src="images/card pause.svg" alt="">
+                </div>
+                <h4 class="folder">Song name</h4>
+                <p class="description">This is music description</p>
+            </div> -->
+
+
+
+        </div>
+        <div class="seekbar-section">
+            <div class="seekbar-info">
+                <p class="seekbar-song-name" style="color: white;" behavior="" direction="">Song name</p>
+                <div class="seekbar-img">
+                    <img class="previous invert" src="images/previous.svg" alt="">
+                    <div class="play-pause">
+                        <img class=" play invert" src="images/play.svg" alt="">
+                        <img class="pause invert" src="images/pause.svg" alt="">
+                    </div>
+                    <img class="next invert" src="images/next.svg" alt="">
+                </div>
+                <div class="volume">
+                    <div onclick="mute_unmute()" class="volume-img">
+                        <img class="invert unmute" src="images/volume.svg" alt="">
+                        <img class="invert mute" src="images/mute.svg" alt="">
+                    </div>
+                    <input class="volume-level" type="range" id="myRange" min="0" max="100" value="30">
+                </div>
+            </div>
+            <div class="seekbar-containt">
+                <div class="duration">
+                    <p style="color: white;"></p>
+                    <p style="color: white;"></p>
+                </div>
+                <input class="seek-bar" type="range" value="0">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
