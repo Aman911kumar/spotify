@@ -145,7 +145,7 @@ async function fetch_songs(folder_url) {
 }
 
 async function fetch_song_folder() {
-    let folder_fetch = await fetch("https://github.com/Aman911kumar/spotify/tree/main/songs");
+    let folder_fetch = await fetch("https://cors-anywhere.herokuapp.com/https://github.com/Aman911kumar/spotify/tree/main/songs");
     let folder_fetch_txt = await folder_fetch.text();
     let div = document.createElement("div");
     div.innerHTML = folder_fetch_txt;
