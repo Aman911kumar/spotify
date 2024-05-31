@@ -127,6 +127,7 @@ document.querySelector(".containt").addEventListener("click", function () {
 });
 
 async function fetch_songs(folder_url) {
+    console.log(folder_url)
     let song_fetch = await fetch(`${folder_url}`);
     let song_fetch_txt = await song_fetch.text();
     let div = document.createElement("div");
