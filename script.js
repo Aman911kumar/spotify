@@ -191,7 +191,7 @@ async function main() {
         let folder = document.querySelector(".containt");
         let folder_info;
         for (let i = 0; i < folderList.length; i++) {
-            folder_info = await (await fetch(`${folderList[i]}info.json`)).json();
+            folder_info = await (await fetch(`${folderList[i]}/info.json`)).json();
             folder.innerHTML += `<div url=${folderList[i]} class="cards">
                 <img class="card-img" src="${folderList[i]}/cover.jpg" alt="">
                 <div class="card-play-pause">
@@ -221,7 +221,7 @@ async function main() {
                 currentTrack.pause();
                 resetSeekbar();
 
-                let playListHeading = await (await fetch(`${folder_url}info.json`)).json()
+                let playListHeading = await (await fetch(`${folder_url}/info.json`)).json()
                 console.log(playListHeading.title)
                 document.querySelector(".library-heading").innerHTML = playListHeading.title
 
