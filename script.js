@@ -146,7 +146,7 @@ async function fetch_songs(folder_url) {
 }
 
 async function fetch_song_folder() {
-    let folder_fetch = await fetch('/songs');
+    let folder_fetch = await fetch('/songs/');
     let folder_fetch_txt = await folder_fetch.text();
     let div = document.createElement("div");
     div.innerHTML = folder_fetch_txt;
